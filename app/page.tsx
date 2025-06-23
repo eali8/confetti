@@ -5,6 +5,7 @@ import Image from "next/image";
 
 export default function Home() {
   const [message, setMessage] = useState("Click a button or choose your vibe!");
+  const [selectedMood, setSelectedMood] = useState("");
 
   const affirmations = [
     "You are glowing 🌟",
@@ -59,7 +60,9 @@ export default function Home() {
           {/* DROPDOWN */}
           <div className="mb-4">
             <select
+              value={selectedMood} // ✅ Controlled value makes ESLint happy
               onChange={(e) => {
+                setSelectedMood(e.target.value);
                 setMessage(`You're feeling ${e.target.value} today 💫`);
               }}
               className="w-full p-3 rounded-xl border border-gray-300 shadow-sm focus:outline-none"
