@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # next.js
 =======
 =======
@@ -44,3 +45,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 >>>>>>> cb83294 (Initial commit)
 =======
 >>>>>>> cb832948a6db36a6267367fe5f4d4ff902390cf7
+=======
+# confetti
+>>>>>>> 5b03f212c80c583a866064bf3814e5a69ff5caee
