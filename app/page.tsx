@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
+import { Button } from "@heroui/react";
 import Image from "next/image";
+import confetti from "canvas-confetti";
 
 export default function Home() {
   const [message, setMessage] = useState("Click a button or choose your vibe!");
@@ -18,6 +20,15 @@ export default function Home() {
   const handleSurprise = () => {
     const random = affirmations[Math.floor(Math.random() * affirmations.length)];
     setMessage(random);
+  };
+
+  const handleConfetti = () => {
+    confetti({
+      particleCount: 100,
+      spread: 90,
+      origin: { y: 0.7 },
+    });
+    setMessage("Woohoo! 🎉 Let’s celebrate!");
   };
 
   return (
@@ -55,12 +66,18 @@ export default function Home() {
             >
               Surprise Me
             </button>
+            <Button
+              onClick={handleConfetti}
+              className="bg-purple-500 text-white px-6 py-2 rounded-xl shadow hover:bg-purple-600 transition"
+            >
+              Confetti 🎉
+            </Button>
           </div>
 
           {/* DROPDOWN */}
           <div className="mb-4">
             <select
-              value={selectedMood} // ✅ Controlled value makes ESLint happy
+              value={selectedMood}
               onChange={(e) => {
                 setSelectedMood(e.target.value);
                 setMessage(`You're feeling ${e.target.value} today 💫`);
